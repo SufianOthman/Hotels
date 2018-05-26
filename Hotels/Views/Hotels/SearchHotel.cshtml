@@ -1,0 +1,22 @@
+﻿@using Hotels.Models;
+@model HotelGeneralModel
+
+@{
+    ViewBag.Title = "SearchHotel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hotel Search</h2>
+
+    <hr />
+    <div id="search-form" class="col-md-6 col-sm-12">
+        @await Html.PartialAsync("_SearchCriteriaPartial",  (Model.SearchCriteria/*this can be null*/))
+
+    </div>
+    <div id="search-results" class="col-md-6 col-sm-12">
+        @await Html.PartialAsync("_SearchResultsPartial", Model.HotelsList)
+    </div>
+
+@section Scripts {
+  
+}

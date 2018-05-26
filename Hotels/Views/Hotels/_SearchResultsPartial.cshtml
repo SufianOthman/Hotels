@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Hotels.Models.HotelModel>
+
+@if (Model != null)
+{
+    if (!Model.Any())
+    {
+        <p>No Records Found.</p>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <article class="" style="border: dotted 1px Gray;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="#">
+                            <img src="@item.HotelInfo.HotelImageUrl" class="img-thumbnail" alt="Blog Post Thumbnail">
+                        </a>
+                        <br />
+                        <div class="star-rating">
+                            @{
+                                var rating = double.Parse(item.HotelInfo.HotelStarRating);
+                            }
+
+                            @for (int i = 0; i < rating; i++)
+                            {
+                                <span class="fa fa-star checked"></span>
+                            }
+
+                            @if (rating <= 4)
+                            {
+                                @for (int j = 0; j < (5 - Math.Ceiling(rating)); j++)
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <h2 style="    font-size: 18px;">
+                            <a href="#">"@item.HotelInfo.HotelName</a>
+                        </h2>
+                        <div class="fff"></div>
+                        <p style="color:gray ">
+                            @item.HotelInfo.HotelLongDestination
+                        </p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div style="color:cornflowerblue;font-size:12px">
+                            @item.HotelInfo.HotelGuestReviewRating/5
+
+                            @if (item.HotelInfo.HotelGuestReviewRating < 4.0 && item.HotelInfo.HotelGuestReviewRating > 3.4)
+                            {
+                                <span style="font-size:14px; color: orange;">Good!</span>
+                            }
+                            else if (item.HotelInfo.HotelGuestReviewRating >= 4.0 && item.HotelInfo.HotelGuestReviewRating < 4.4)
+                            {
+                                <span style="font-size:14px; color: orange;">Very Good!</span>
+                            }
+
+                            else if (item.HotelInfo.HotelGuestReviewRating >= 4.4)
+                            {
+                                <span style="font-size:14px; color: orange;">Excellent!</span>
+                            }
+
+                            <br />
+                            (@item.HotelInfo.HotelReviewTotal reviews)
+                        </div>
+                        <div>
+                            <p>
+                                <b>
+                                    <label style="font-size:16px;  color:black;">
+                                        <strike style="color:Gray;"> $@item.HotelPricingInfo.OriginalPricePerNight</strike>
+                                        &nbsp;&nbsp;   $@item.HotelPricingInfo.AveragePriceValue
+                                    </label>
+                                </b>
+                                <br />
+                                <label style="font-size:11px;  color:black;">
+                                    nightly price
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        }
+    }
+ }
