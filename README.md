@@ -7,7 +7,7 @@ Check the Live site <a href="http://hotels-arabia.herokuapp.com" rel="nofollow" 
 
 # Prequisites 
 
-Install the .NET Core 2.x SDK.
+Install .NET Core 2.x.
 Get the required packages "nuget" using dotnet restore.
 Run the app using dotnet run, a link will be shown to view the app.
 
