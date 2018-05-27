@@ -42,13 +42,13 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 @Html.LabelFor(model => model.MinStarRating)
-                @Html.EditorFor(model => model.MinStarRating, new { htmlAttributes = new { @class = "form-control" , @type = "number" , @min = "0" } })
+                @Html.EditorFor(model => model.MinStarRating, new { htmlAttributes = new { @class = "form-control" , @type = "number" , @min = "0" , @placeholder= "0 to 5"} })
                 @Html.ValidationMessageFor(model => model.MinStarRating, "", new { @class = "text-danger" })
             </div>
 
             <div class="col-md-6 col-sm-12">
                 @Html.LabelFor(model => model.MaxStarRating)
-                @Html.EditorFor(model => model.MaxStarRating, new { htmlAttributes = new { @class = "form-control" , @type = "number" , @min = "0" } })
+                @Html.EditorFor(model => model.MaxStarRating, new { htmlAttributes = new { @class = "form-control" , @type = "number" , @min = "0", @placeholder = "0 to 5" } })
                 @Html.ValidationMessageFor(model => model.MaxStarRating, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 @Html.LabelFor(model => model.MinGuestRating)
-                @Html.EditorFor(model => model.MinGuestRating, new { htmlAttributes = new { @class = "form-control" , @type = "number", @min = "0" } })
+                @Html.EditorFor(model => model.MinGuestRating, new { htmlAttributes = new { @class = "form-control" , @type = "number", @min = "0" , @placeholder = "0 to 5" } })
                 @Html.ValidationMessageFor(model => model.MinGuestRating, "", new { @class = "text-danger" })
             </div>
 

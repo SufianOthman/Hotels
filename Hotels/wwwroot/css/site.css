@@ -43,3 +43,10 @@
 .footer-text{
     padding-left:10px;
 }
+
+.article-item {
+    border: dotted 1px Gray;
+    margin-bottom: 2px;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
