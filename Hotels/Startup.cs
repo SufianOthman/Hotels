@@ -1,4 +1,5 @@
-﻿using Hotels.Services;
+﻿using Hotels.Models;
+using Hotels.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace Hotels
         {
             services.AddMvc();
             services.AddTransient<IWebApiInvoker, WebApiInvoker>();
+            services.Configure<ConfigurationsModel>(Configuration.GetSection("SiteSettings"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
 ﻿using Hotels.Models;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -7,16 +8,17 @@ using System.Text;
 namespace Hotels.Services
 {
     public class WebApiInvoker : IWebApiInvoker
-    {
-        const string Url = "https://offersvc.expedia.com/offers/v2/getOffers";
+    {     
+        //Get Base URL from appsettings.json config
+        private readonly ConfigurationsModel _siteConfiguration;
 
-        public WebApiInvoker()
+        public WebApiInvoker(IOptions<ConfigurationsModel> siteConfiguration)
         {
-
+            _siteConfiguration = siteConfiguration.Value;
         }
         public SearchResultsModel GetHotels(SearchCriteriaModel searchCriteria)
         {
-            string baseUrl = Url;
+            string baseUrl = _siteConfiguration.BaseUrl;
             var uriBuilder = new UriBuilder(baseUrl);
             var query = CreateQueryFromCriteria(searchCriteria);
 
