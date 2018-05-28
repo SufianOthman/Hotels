@@ -36,7 +36,7 @@
                             }
                         </div>
                         <div class="more-info-link">
-                            <a href="#info_@item.HotelInfo.HotelId" data-toggle="collapse"><i class="glyphicon glyphicon-info-sign"></i><u>More details</u></a>
+                            <a href="#info_@item.HotelInfo.HotelId" data-toggle="collapse"><i class="glyphicon glyphicon-info-sign"></i><u>Map &amp; details</u></a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -54,16 +54,16 @@
 
                             @if (item.HotelInfo.HotelGuestReviewRating < 4.0 && item.HotelInfo.HotelGuestReviewRating > 3.4)
                             {
-                            <span style="font-size:14px; color: orange;">Good!</span>
+                                <span style="font-size:14px; color: orange;">Good!</span>
                             }
                             else if (item.HotelInfo.HotelGuestReviewRating >= 4.0 && item.HotelInfo.HotelGuestReviewRating < 4.4)
                             {
-                            <span style="font-size:14px; color: orange;">Very Good!</span>
+                                <span style="font-size:14px; color: orange;">Very Good!</span>
                             }
 
                             else if (item.HotelInfo.HotelGuestReviewRating >= 4.4)
                             {
-                            <span style="font-size:14px; color: orange;">Excellent!</span>
+                                <span style="font-size:14px; color: orange;">Excellent!</span>
                             }
 
                             <br />
@@ -98,11 +98,18 @@
                                 <li class="col-md-3"> <strong>Region ID:</strong></li>
                                 <li class="col-md-9">@item.Destination.RegionId</li>
                                 <li class="col-md-12 hotel-url"> <strong>For more information about this hotel</strong> <a href="@Html.Raw(System.Net.WebUtility.UrlDecode(item.HotelUrls.HotelInfositeUrl))" target="_blank">Click Here</a> </li>
-                            </ul>                          
+                            </ul>
                         </div>
+                        <iframe class="col-md-12"
+                                height="170"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="https://maps.google.com/maps?q='@item.HotelInfo.HotelName'&hl=es;z=14&amp;output=embed"></iframe>
                     </div>
                 </div>
             </article>
-        }                                
-     }
-  }
+        }
+    }
+ }
