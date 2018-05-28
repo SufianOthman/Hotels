@@ -8,7 +8,7 @@ For the last couple of years i have been working on .Net projects, Therefore it 
 
 Creating a POC for consuming an API, while keeping the code simple and maintainable. 
 Keeping the Search Criteria side by side with the results on the same page for a better user experience.
-<p>Details section with a map per hotel in search results to give the user an idea of the location</p>
+<p>Details section with a map per hotel in the search results section to give the user an idea of the location</p>
 
 # What I learned !
 Had the chance to learn about Heroku and to get familiar with .net core.
