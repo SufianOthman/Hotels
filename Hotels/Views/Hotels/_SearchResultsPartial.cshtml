@@ -13,7 +13,7 @@
             <article class="article-item">
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="#">
+                        <a href="#info_@item.HotelInfo.HotelId" data-toggle="collapse">
                             <img src="@item.HotelInfo.HotelImageUrl" class="img-thumbnail" alt="Blog Post Thumbnail">
                         </a>
                         <br />
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-md-5">
                         <h2 style="    font-size: 18px;">
-                            <a href="#">"@item.HotelInfo.HotelName</a>
+                            <a href="#info_@item.HotelInfo.HotelId" data-toggle="collapse">"@item.HotelInfo.HotelName</a>
                         </h2>
                         <div class="fff"></div>
                         <p style="color:gray ">
@@ -98,11 +98,11 @@
                                 <li class="col-md-3"> <strong>Region ID:</strong></li>
                                 <li class="col-md-9">@item.Destination.RegionId</li>
                                 <li class="col-md-12 hotel-url"> <strong>For more information about this hotel</strong> <a href="@Html.Raw(System.Net.WebUtility.UrlDecode(item.HotelUrls.HotelInfositeUrl))" target="_blank">Click Here</a> </li>
-                            </ul>
+                            </ul>                          
                         </div>
                     </div>
                 </div>
             </article>
-        }
-    }
- }
+        }                                
+     }
+  }
