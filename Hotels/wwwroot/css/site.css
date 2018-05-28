@@ -1,6 +1,5 @@
 ﻿body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Wrapping element */
@@ -43,10 +42,36 @@
 .footer-text{
     padding-left:10px;
 }
-
 .article-item {
     border: dotted 1px Gray;
     margin-bottom: 2px;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     border-color: #ddd;
+}
+.more-info-link {
+    padding-left: 4px;
+    font-size: 13px;
+}
+
+.more-info-link .glyphicon {
+    top: 2px;
+    margin-right: 3px;
+}
+
+.list-info {
+    background: rgba(9, 198, 171,.03);
+    color: #00355f;
+    float: left;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding-left: 0;
+    list-style: none;
+}
+.hotel-url{
+    margin-top:5px;
+}
+.info-text{
+    font-size:14px;
 }

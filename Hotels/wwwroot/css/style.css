@@ -442,7 +442,7 @@ h2 {
 }
 
 .gtco-cover {
-  height: 900px;
+  min-height: 700px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1877,6 +1877,7 @@ form label {
   line-height: 1.5;
   list-style: none;
 }
+
 @media screen and (max-width: 768px) {
   .fh5co-faq-list li {
     margin: 0 0 20px 0;
@@ -1892,5 +1893,3 @@ form label {
     font-size: 26px;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

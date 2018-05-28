@@ -35,6 +35,9 @@
                                 }
                             }
                         </div>
+                        <div class="more-info-link">
+                            <a href="#info_@item.HotelInfo.HotelId" data-toggle="collapse"><i class="glyphicon glyphicon-info-sign"></i><u>More details</u></a>
+                        </div>
                     </div>
                     <div class="col-md-5">
                         <h2 style="    font-size: 18px;">
@@ -45,23 +48,22 @@
                             @item.HotelInfo.HotelLongDestination
                         </p>
                     </div>
-
                     <div class="col-md-4">
                         <div style="color:cornflowerblue;font-size:12px">
                             @item.HotelInfo.HotelGuestReviewRating/5
 
                             @if (item.HotelInfo.HotelGuestReviewRating < 4.0 && item.HotelInfo.HotelGuestReviewRating > 3.4)
                             {
-                                <span style="font-size:14px; color: orange;">Good!</span>
+                            <span style="font-size:14px; color: orange;">Good!</span>
                             }
                             else if (item.HotelInfo.HotelGuestReviewRating >= 4.0 && item.HotelInfo.HotelGuestReviewRating < 4.4)
                             {
-                                <span style="font-size:14px; color: orange;">Very Good!</span>
+                            <span style="font-size:14px; color: orange;">Very Good!</span>
                             }
 
                             else if (item.HotelInfo.HotelGuestReviewRating >= 4.4)
                             {
-                                <span style="font-size:14px; color: orange;">Excellent!</span>
+                            <span style="font-size:14px; color: orange;">Excellent!</span>
                             }
 
                             <br />
@@ -82,9 +84,25 @@
                             </p>
                         </div>
                     </div>
+                    <div id="info_@item.HotelInfo.HotelId" class="collapse col-md-12">
+                        <div class="col-md-12">
+                            <ul class="list-info info-text">
+                                <li class="col-md-3"> <strong>Full Address:</strong></li>
+                                <li class="col-md-9">@item.Destination.LongName</li>
+                                <li class="col-md-3"> <strong>Country:</strong></li>
+                                <li class="col-md-9">@item.Destination.Country</li>
+                                <li class="col-md-3"> <strong>City:</strong></li>
+                                <li class="col-md-9"> @item.Destination.City </li>
+                                <li class="col-md-3"> <strong>Province:</strong></li>
+                                <li class="col-md-9">@item.Destination.Province</li>
+                                <li class="col-md-3"> <strong>Region ID:</strong></li>
+                                <li class="col-md-9">@item.Destination.RegionId</li>
+                                <li class="col-md-12 hotel-url"> <strong>For more information about this hotel</strong> <a href="@Html.Raw(System.Net.WebUtility.UrlDecode(item.HotelUrls.HotelInfositeUrl))" target="_blank">Click Here</a> </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </article>
-
         }
     }
  }
